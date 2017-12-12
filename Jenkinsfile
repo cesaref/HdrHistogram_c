@@ -4,10 +4,11 @@ node {
     }
 
     stage('Build') {
-        sh 'mkdir build'
-        sh 'cd build'
-        sh 'cmake ..'
-        sh 'make'
-        sh 'make test'
+        sh '''rm -rf build
+              mkdir build
+              cd build
+              cmake ..
+              make
+              make test'''
     }
 }
